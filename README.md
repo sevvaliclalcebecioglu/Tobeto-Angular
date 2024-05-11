@@ -1,5 +1,18 @@
 # Rentacar
 
+# Dosyalar
+`angular.json`: Angular tarafındaki yapılandırma dosyasıdır. Projenin yapılandırmasını ve yapılandırma ayarlarını içerir.
+`package.json`: Projenin bilgilerini ve bağımlılıklarını ve scriptlerini içerir.
+`server.ts`: Projenin çalıştırılmasını SSR olarak sunulasını sağlayan nodejs server.
+`tsconfig.json`: TypeScript ayarlarını içerir.
+
+`src/assets/`: Uygulamanın statik dosyalarının bulunduğu klasördür.
+`src/index.html`: Uygulamanın başlangıç html noktasıdır.
+`src/styles.scss`: Uygulamanın global css dosyasıdır.
+`src/app`: Uygulamanın angular uygulamasını oluşturduğumuz ana klosörüdür.
+`src/app/app.component.ts`: Uygulamanın ana ve başlangıç componentidir. Dolayısıyla genel olarak teknik başlangıçları uyguladığımız yerdir.
+`src/app/app.config.ts`: Uygulamanın genel ayarlarının yapıldığı dosyadır.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
 ## Development server
