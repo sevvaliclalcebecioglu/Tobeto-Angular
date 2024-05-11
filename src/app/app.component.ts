@@ -22,7 +22,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent{
   // Component'in class'ıyla dinamik yapıyı,temel işlev ve kararları yapabiliriz.
-  title = 'Rent A Car'; //State: Component'in sakladığı veri ve izlediği veri yapısı
+  title = 'Northwind'; //State: Component'in sakladığı veri ve izlediği veri yapısı
 
   onButtonClick() {
     this.title = 'Northwind İclal'; // State'i güncelleyen fonksiyon
