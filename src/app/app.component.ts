@@ -25,7 +25,7 @@ export class AppComponent{
   title = 'Rent A Car'; //State: Component'in sakladığı veri ve izlediği veri yapısı
 
   onButtonClick() {
-    this.title = 'Rent A Car İclal'; // State'i güncelleyen fonksiyon
+    this.title = 'Northwind İclal'; // State'i güncelleyen fonksiyon
     console.log("Button Clicked");
   }
 }
