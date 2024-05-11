@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from './components/navbar/navbar.component';
 //import { CommonModule }
 
 
@@ -12,7 +13,9 @@ import { Component } from '@angular/core';
    // Her component'in kendi import'ı olabilir.
      // Böylece her component kendi başına angulara dahil olabilir.
   standalone: true,
-  imports: [],
+  imports: [
+    NavbarComponent
+  ],
   // Import'larda Angular modüllerini bu componentte kullanmak adına modülleri sağlamış oluyoruz.
 
   templateUrl: './app.component.html',
