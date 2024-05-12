@@ -32,6 +32,19 @@ export class AppComponent{
   readonly title : string = 'Northwind'; //State: Component'in sakladığı veri ve izlediği veri yapısı
   counter : number = 0;
 
+  products :{name: string, price : number, discontinued : boolean}[] = [
+    {name: "Çay", price: 100, discontinued: false},
+    {name: "Kahve", price: 200, discontinued: true},
+    {name: "Su", price: 300, discontinued: false},
+    {name: "Çikolata", price: 10, discontinued: true},
+    {name: "Kek", price: 150, discontinued: false},
+    {name: "Bisküvi", price: 75, discontinued: true}
+  ];
+
+  get filteredProducts() {
+    return this.products.filter((p) => !p.discontinued);
+  }
+
   onButtonClick() {
     this.counter += 1; // State'i güncelleyen fonksiyon
     console.log("Button Clicked");

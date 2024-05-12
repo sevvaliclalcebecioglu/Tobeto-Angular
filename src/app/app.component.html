@@ -38,4 +38,17 @@
   <p>Sayaç </p>
 }
 
+<hr>
+
+ngFor:
+<ul>
+  <ng-container *ngFor="let product of products">
+    <li *ngIf="!product.discontinued">
+        {{product.name}} - {{product.price}}
+    </li>
+
+  </ng-container>
+</ul>
+
+
 <app-footer></app-footer>
