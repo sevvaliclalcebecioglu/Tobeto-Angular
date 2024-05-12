@@ -1,9 +1,41 @@
 <!--import ettikten sonra sanki bir html etiketi gibi burada kullanabiliyorum-->
 <app-navbar></app-navbar>
 
+<p>Counter: {{ counter }}</p>
 <h1>Hello, {{ title }}</h1>
-<button (click)="onButtonClick()">Click me</button>
+<button (click)="onButtonClick()">Arttır</button>
 
-<app-navbar></app-navbar>
-<app-navbar></app-navbar>
-<app-navbar></app-navbar>
+<!--Angular 17'den önce-->
+<!-- *ngIf -->
+<p *ngIf="counter > 5; else counterElse">
+  <!--Structual Directives: * ile başlayan directive'ler bizim için yapısal directive'lerdir.-->
+  <!--Bu element'in render'lanmasını ele alıyor ve yönetiyor.-->
+  Sayaç 5'den büyük.
+</p>
+<!--Else için aşağıdaki gibi bir template vermem lazım-->
+<!--Else if yok. Ama onun için de aşağıda yeni bir if bloğu açabilirim-->
+<ng-template #counterElse>
+  <p *ngIf="counter === 5; else counterElseElse">Sayaç 5'e eşit.</p>
+
+  <ng-template #counterElseElse>
+    <p>Sayaç 5'ten küçük.</p>
+  </ng-template>
+
+</ng-template>
+
+<!--ng-template: Sadece özel olarak çağırılarak renderlanabilen, bir template'i kapsayan angular elementidir.-->
+
+<!--ng-container: Angular tarafından renderlanmayan bir elementtir. Sadece içerisindeki elementleri renderlamak için kullanılır.-->
+<!--Yani HTML içinde kendisini görmeyiz.-->
+
+<!--Angular 17'den sonra-->
+<!--Ya da aşağıdaki gibi de kullanabiliriz.-->
+@if (counter > 5) {
+  <p>Sayaç 5'den büyüktür.</p>
+}@else if (counter === 5) {
+  <p>Sayaç 5'e eşit.</p>
+}@else {
+  <p>Sayaç </p>
+}
+
+<app-footer></app-footer>

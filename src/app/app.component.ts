@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CommonModule } from '@angular/common';
 //import { CommonModule }
 
 
@@ -14,7 +16,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
      // Böylece her component kendi başına angulara dahil olabilir.
   standalone: true,
   imports: [
-    NavbarComponent
+    CommonModule,
+    NavbarComponent,
+    FooterComponent
   ],
   // Import'larda Angular modüllerini bu componentte kullanmak adına modülleri sağlamış oluyoruz.
 
@@ -25,10 +29,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 })
 export class AppComponent{
   // Component'in class'ıyla dinamik yapıyı,temel işlev ve kararları yapabiliriz.
-  title = 'Northwind'; //State: Component'in sakladığı veri ve izlediği veri yapısı
+  readonly title : string = 'Northwind'; //State: Component'in sakladığı veri ve izlediği veri yapısı
+  counter : number = 0;
 
   onButtonClick() {
-    this.title = 'Northwind İclal'; // State'i güncelleyen fonksiyon
+    this.counter += 1; // State'i güncelleyen fonksiyon
     console.log("Button Clicked");
   }
 }
