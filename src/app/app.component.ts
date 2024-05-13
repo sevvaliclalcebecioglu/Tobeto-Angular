@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 //import { CommonModule }
@@ -16,7 +14,9 @@ import { RouterModule } from '@angular/router';
    // Her component'in kendi import'ı olabilir.
      // Böylece her component kendi başına angulara dahil olabilir.
   standalone: true,
-  imports: [RouterModule],
+  imports: [
+    CommonModule,
+    RouterModule],
   // Import'larda Angular modüllerini bu componentte kullanmak adına modülleri sağlamış oluyoruz.
 
   templateUrl: './app.component.html',
