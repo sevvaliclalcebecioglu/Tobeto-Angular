@@ -24,4 +24,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './app.component.scss',
   // CSS dosyası
 })
-export class AppComponent{}
+export class AppComponent{
+}

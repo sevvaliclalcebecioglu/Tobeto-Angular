@@ -1,1 +1,15 @@
-<app-navbar></app-navbar>
+<div class="d-flex flex-column min-vh-100">
+  <header>
+    <app-navbar></app-navbar>
+  </header>
+
+  <main class="container flex-grow-1">
+    <ng-content></ng-content>
+  </main>
+
+  <!-- HTML Semantic HTML Tags -->
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>
+
