@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
+// Genel bir input olan state için type oluşturuldu.
 export interface ListGroupItem {
   id: string;
   label: string;
@@ -18,4 +19,6 @@ export interface ListGroupItem {
 })
 export class ListGroupComponent {
  @Input() items : ListGroupItem[] = [];
+ // @Input: Bu component'in kullanıldığı yerden dışardan(kullanıldığı yerden) bir değer almasını sağlar.
+ // State'in değerini dışarıdan(kullanıldığı yerden) da atanabilir hale getirir.
 }

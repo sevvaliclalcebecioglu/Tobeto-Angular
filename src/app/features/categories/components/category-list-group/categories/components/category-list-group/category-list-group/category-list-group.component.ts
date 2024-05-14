@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CategoryListItem } from '../../../../models/category-list-item';
-import { ListGroupComponent } from '../../../../../../../../components/list-group/list-group.component';
+import { ListGroupComponent, ListGroupItem } from '../../../../../../../../components/list-group/list-group.component';
 
 
 
@@ -25,8 +25,26 @@ export class CategoryListGroupComponent {
     { id: 4, name: "Meat" },
     { id: 5, name: "Fish" }
   ];
-  // This is a nock data //TODO: get data from backend
+  // This is a nock data
+  // TODO: get data from backend
 
-  get categoryListGroupItems()
+  // Aşağıda her bir kategori için yeni bir obje oluşturuyoruz.
+
+  // map: array içindeki her bir elemanı dönüp yeni değerlerle, yeni bir array oluşturur.
+
+  get categoryListGroupItems(): ListGroupItem[] {
+    return this.categoryList.map((category) => {
+
+
+      const ListGroupItem: ListGroupItem = {
+       // ListGroupItem tipinde bir obje oluşturuldu.
+        id: category.id.toString(),
+        label: category.name,
+      };
+      // Yeni bir array oluşturmak adına yeni değer geri döndürüldü.
+      return ListGroupItem;
+    });
+  }
+  // Döndüğümüz objelerden sonra yeni bir array oluşmuş oldu.
 
 }

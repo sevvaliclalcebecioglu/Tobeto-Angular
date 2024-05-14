@@ -1,9 +1,12 @@
-<ul>
+<!--<ul>
   @for (category of categoryList; track $index) {
     <li>
       {{ category.name }}
     </li>
   }
 </ul>
+-->
 
-<app-list-group [items]="[]"></app-list-group>
+<!--Java tarafında getCategoryListGroupItems() diye kullandığım metod olarak düşünebilirim.-->
+<app-list-group [items]="categoryListGroupItems"></app-list-group>
+<!--Aynı değişken gibi yazıp çağırabiliyoruz.-->
