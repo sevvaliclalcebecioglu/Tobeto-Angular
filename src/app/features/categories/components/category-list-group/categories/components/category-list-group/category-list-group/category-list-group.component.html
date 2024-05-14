@@ -8,5 +8,8 @@
 -->
 
 <!--Java tarafında getCategoryListGroupItems() diye kullandığım metod olarak düşünebilirim.-->
-<app-list-group [items]="categoryListGroupItems"></app-list-group>
+<app-list-group [items]="categoryListGroupItems"
+(changeSelect)="onChangeSelect($event)"
+></app-list-group>
 <!--Aynı değişken gibi yazıp çağırabiliyoruz.-->
+<!-- $event: @Output ile gelen veriyi temsil eder.-->
