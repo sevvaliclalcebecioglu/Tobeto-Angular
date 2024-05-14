@@ -1,1 +1,13 @@
-<p>product-card-list works!</p>
+<div class="d-flex flex-wrap gap-4">
+  @for (product of productList; track $index) {
+    <app-card
+     [title]="product.name"
+     [imageSrc]="product.imageUrl"
+     [imageAlt]="product.name"
+     [description]="product.description"
+     [buttonLabel]="'Add to Cart' + product.price"
+    ></app-card>
+  }
+</div>
+
+

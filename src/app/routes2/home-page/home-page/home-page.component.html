@@ -5,12 +5,20 @@
   <small>Our products are fresh!</small>
 </div>
 
-<a routerLink="/auth/login"><span> to Login</span></a>
+<!-- <a routerLink="/auth/login"><span> to Login</span></a> -->
 <!-- Page Component: İlgili yapıları ve component'leri bir araya getirerek ilgili sayfayı oluşturduğumuz componentlerdir. -->
 
-<h1>Categories</h1>
-<app-category-list-group>
+<div class="row">
+<div class="col-4 col-lg-3 col-xl-2">
+  <h1>Categories</h1>
+  <app-category-list-group></app-category-list-group>
+</div>
 
-</app-category-list-group>
+<div class="col">
+  <h1>Products</h1>
+  <app-product-card-list></app-product-card-list>
+</div>
+</div>
+
 </app-basic-layout>
 
