@@ -1,15 +1,17 @@
-<!--<ul>
-  @for (category of categoryList; track $index) {
-    <li>
-      {{ category.name }}
-    </li>
-  }
-</ul>
--->
 
 <!--Java tarafında getCategoryListGroupItems() diye kullandığım metod olarak düşünebilirim.-->
+<!-- <ul>
+  @for (category of categoryList; track $index) {
+  <li >
+    {{ category.name }}
+  </li>
+  }
+</ul> -->
+
 <app-list-group [items]="categoryListGroupItems"
 (changeSelect)="onChangeSelect($event)"
 ></app-list-group>
+
+  <!-- $event: @Output ile gelen veriyi temsil eder. -->
 <!--Aynı değişken gibi yazıp çağırabiliyoruz.-->
 <!-- $event: @Output ile gelen veriyi temsil eder.-->

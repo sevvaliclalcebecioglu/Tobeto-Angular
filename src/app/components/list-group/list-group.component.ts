@@ -28,12 +28,13 @@ export class ListGroupComponent implements OnInit {
   // @Input: Bu component'in dışarıdan (kullanıldığı yerden) bir değer almasını sağlar.
   // State'in değerini dışarıdan (kullanıldığı yerden) da atanabilir hale getirir.
 
-  @Output() changeSelect = new EventEmitter<{
-    selectedItemId: string | null;
-  }>(); // <app-list-group (changeSelect)="onListGroupItemClick($event)"></app-list-group>
+  @Output() changeSelect = new EventEmitter
+  <{selectedItemId : string | null}>();
+  // <app-list-group (changeSelect)="onListGroupItemClick($event)"></app-list-group>
   // @Output: Bu component'ten dışarıya bir değer gönderilmesini sağlar.
   // EventEmitter: Bu component'ten dışarıya bir değer gönderilmesini sağlar.
   // Component'in kullanıldığı yerde bu event'i dinleyen bir metot olabilir.
+  // Event'e subscribe olan yerde bu değer alınabilir.
 
   selectedItemId: string | null = null;
 
@@ -44,7 +45,7 @@ export class ListGroupComponent implements OnInit {
 
   onListGroupItemClick(item: ListGroupItem) {
     this.selectedItemId = this.selectedItemId !== item.id ? item.id : null;
-    this.changeSelect.emit({ selectedItemId: this.selectedItemId });
+    this.changeSelect.emit( {selectedItemId : this.selectedItemId });
   }
 
   isSelectedItem(itemId: string): boolean {

@@ -11,12 +11,14 @@
 <div class="row">
 <div class="col-4 col-lg-3 col-xl-2">
   <h1>Categories</h1>
-  <app-category-list-group></app-category-list-group>
+  <app-category-list-group (changeSelect)="onChangeSelectCategory($event)"></app-category-list-group>
 </div>
+
+<!--Category'den aldığım veriyi produts'a vermem lazım-->
 
 <div class="col">
   <h1 >Products</h1>
-  <app-product-card-list></app-product-card-list>
+  <app-product-card-list [filterByCategoryId]="selectedCategory?.id ?? null "></app-product-card-list>
 </div>
 </div>
 

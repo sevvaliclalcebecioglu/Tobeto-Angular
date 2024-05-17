@@ -1,7 +1,11 @@
 <ul class="list-group">
   @for (item of items; track $index)
-  {<li class="list-group-item list-group-item-action n-list-group-item " [ngClass]="{
-    'active': isSelectedItem(item.id),}"
-    (click)="onListGroupItemClick(item)">{{
-    item.label }}</li>}
+  {<li class="list-group-item list-group-item-action n-list-group-item "
+  [ngClass]="{
+    'active': isSelectedItem(item.id),
+  }"
+   (click)="onListGroupItemClick(item)"
+   > {{ item.label }}
+  </li>
+  }
 </ul>

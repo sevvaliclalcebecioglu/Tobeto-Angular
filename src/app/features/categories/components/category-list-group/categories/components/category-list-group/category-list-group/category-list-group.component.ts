@@ -1,31 +1,38 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy, Component,
+  EventEmitter,
+  Input, Output
+} from '@angular/core';
 import { CategoryListItem } from '../../../../models/category-list-item';
 import { ListGroupComponent, ListGroupItem } from '../../../../../../../../components/list-group/list-group.component';
-import { EventEmitter } from 'stream';
-
-
-
 
 @Component({
   selector: 'app-category-list-group',
   standalone: true,
-  imports: [CommonModule, ListGroupComponent],
+  imports: [CommonModule,
+    ListGroupComponent
+  ],
   templateUrl: './category-list-group.component.html',
   styleUrl: './category-list-group.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CategoryListGroupComponent {
   @Input() initialSelectedCategoryId: number | null = null;
-  @Output() changeSelect = new EventEmitter<{selectedCategory: CategoryListItem | null;}>();
+  @Output() changeSelect = new EventEmitter<{
+    selectedCategory: CategoryListItem | null;
+  }>();
 
-  categoryList: CategoryListItem[] = [
-    { id: 1, name: 'Dairy' },
-    { id: 2, name: 'Fruits' },
-    { id: 3, name: 'Vegetables' },
-    { id: 4, name: 'Meat' },
-    { id: 5, name: 'Fish' },
-  ]; // This is a mock data //TODO: get data from backend
+  categoryList : CategoryListItem[] = [
+    {id: 1, name: 'Dairy'},
+    {id: 2, name: 'Fruits'},
+    {id: 3, name: 'Vegetables'},
+    {id: 4, name: 'Meat'},
+    {id: 5, name: 'Fish'},
+  ];
+  // This is a mock data
+  // TODO: get data from backend
+
 
   get categoryListGroupItems(): ListGroupItem[] {
     // map: array içindeki her bir elemanı dönüp yeni değerlerle, yeni bir array oluşturur.

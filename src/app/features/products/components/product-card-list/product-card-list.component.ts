@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ProductListItem } from '../../models/product-list-item';
 import { CardComponent } from '../../../../components/card/card.component';
 
@@ -15,6 +15,8 @@ import { CardComponent } from '../../../../components/card/card.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductCardListComponent {
+@Input() filterByCategoryId: number | null = null;
+
   productList: ProductListItem[] = [
     {
       id: 1,
@@ -76,4 +78,17 @@ export class ProductCardListComponent {
 
     // Mock data
     // TODO: Get from backend
+
+    // Eğer bir kategori id varsa ona göre filtreleme yapacak.
+    get filteredProductList(): ProductListItem[] {
+      var filteredCategoryList = this.productList;
+
+      if (this.filterByCategoryId) {
+        filteredCategoryList = this.productList.filter(
+          (product) => product.categoryId === this.filterByCategoryId
+        );
+      }
+
+      return filteredCategoryList;
+    }
 }
