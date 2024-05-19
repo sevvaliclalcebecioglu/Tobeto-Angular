@@ -39,8 +39,6 @@ export class HomePageComponent implements OnInit {
   // Bunları bize gözlemlenebilir bir yapıda sunuyor olacak. Parametre değiştiğinde veya başka bir şey olduğu zaman bana haber verecek.
   categoryIdFromRoute() {
      this.route.queryParams.subscribe((queryParams) => {
-      console.log('queryParams: ', queryParams);
-
       const categoryId : number|undefined = Number(queryParams['category']);
       if (categoryId)
         this.selectedCategory = {

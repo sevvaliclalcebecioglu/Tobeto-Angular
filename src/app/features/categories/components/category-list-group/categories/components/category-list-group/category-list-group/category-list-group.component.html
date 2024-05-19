@@ -8,7 +8,9 @@
   }
 </ul> -->
 
-<app-list-group [items]="categoryListGroupItems"
+<app-list-group
+[initialSelectedItemId]="initialSelectedCategoryId?.toString() ?? null"
+[items]="categoryListGroupItems"
 (changeSelect)="onChangeSelect($event)"
 ></app-list-group>
 
